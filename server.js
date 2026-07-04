@@ -29,17 +29,17 @@ app.set('views', path.join(__dirname, 'src/views'));
 /**
  * Routes
  */
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
     const title = 'Home';
     res.render('home', { title });
 });
 
-app.get('/organizations', async (req, res) => {
+app.get('/organizations', (req, res) => {
     const title = 'Our Partner Organizations';
     res.render('organizations', { title });
 });
 
-app.get('/projects', async (req, res) => {
+app.get('/projects', (req, res) => {
     const title = 'Service Projects';
     res.render('projects', { title });
 });
