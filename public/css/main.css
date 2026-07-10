@@ -16,6 +16,7 @@ body {
         li {
             display: inline;
             margin-right: 15px;
+            flex-direction: column;  
         }
 
         a {
