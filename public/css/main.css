@@ -36,10 +36,26 @@ body {
             }
         }
     }
-    li {
-        display: inline-block;
-        border: 1px solid #ccc;
+    .project-card, .organization-card {
+        display: flex;
+        flex-direction: row;
+        background-color: #dfcfcf;
+        flex-wrap: nowrap;
+        border: 1px solid #448c55;
+        border-radius: 8px;
         padding: 10px;
+        margin: 10px;
         margin-right: 20px;
+    }
+    .organization-card  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5,  1fr);*/
+
     }
 }

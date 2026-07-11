@@ -2,13 +2,14 @@
     <main>
         <h1><%= title %></h1>
         <p>Here are a few of our partner organizations:</p>
-        <ul>
+        <ul class="organization-list">
             <% organizations.forEach(organization => { %>
                 <li class="organization-card">
                     <img src="/images/<%= organization.logo_filename %>" alt="<%= organization.name %> logo"> 
-                    <strong><%= organization.name %></strong>: <%= organization.contact_email %>
-                </li>
+                    <strong><%= organization.name %></strong> <%= organization.contact_email %>
                 <p><%= organization.description %></p>
+                </li>
+                
 
             <% }) %>    
            <!-- <li><img src="/images/brightfuture-logo.png" alt="BrightFuture Builders logo"><strong>BrightFuture
