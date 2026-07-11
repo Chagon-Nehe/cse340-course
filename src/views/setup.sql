@@ -19,6 +19,8 @@ VALUES
 ('GreenHarvest Growers', 'An urban farming collective promoting food sustainability and education in local neighborhoods.', 'contact@greenharvest.org', 'greenharvest-logo.png'),
 ('UnityServe Volunteers', 'A volunteer coordination group supporting local charities and service initiatives.', 'hello@unityserve.org','unityserve-logo.png');
 
+
+
 -- ===============================================
 -- Service Project Table
 -- ===============================================
@@ -37,7 +39,9 @@ CREATE TABLE IF NOT EXISTS project (
         ON DELETE CASCADE
 );
 
-
+--==============================================
+-- INSERT DATA INTO PROJECT
+--==============================================
 -- 5 Projects for BrightFuture Builders (Org ID: 1)
 INSERT INTO project (organization_id, title, description, location, project_date) VALUES
 (1, 'Community Center Refurbish', 'Painting and repairing the local youth community center.', '123 Main St, Downtown', '2026-08-12'),
