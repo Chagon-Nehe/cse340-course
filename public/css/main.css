@@ -63,4 +63,16 @@ body {
         }
 
     }
+    .category-list{
+        display: grid;
+        background-color: #dfcfcf;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5,  1fr);
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            
+        }
+
+    }
 }

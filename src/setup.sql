@@ -82,5 +82,38 @@ JOIN organization o ON p.organization_id = o.organization_id;
 
 
 
+--=====================================
+--CATEGORIES TABLE
+--=====================================
+-- 1. Create the Categories Table
+CREATE TABLE IF NOT EXISTS category (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
 
+-- 2. Create the Junction Table for the Many-to-Many relationship
+CREATE TABLE IF NOT EXISTS project_category (
+    project_id INT NOT NULL REFERENCES project(project_id) ON DELETE CASCADE,
+    category_id INT NOT NULL REFERENCES category(category_id) ON DELETE CASCADE,
+    PRIMARY KEY (project_id, category_id) -- Prevents assigning the same category to a project twice
+);
+
+-- 3. Insert the required 3+ categories
+INSERT INTO category (name) VALUES
+('Construction & Repair'),
+('Environment & Gardening'),
+('Food & Nutrition'),
+('Education & Literacy');
+
+-- 4. Associate EACH of your 15 projects with at least one category
+-- (Assuming project_ids are 1 through 15 and category_ids are 1 through 4)
+INSERT INTO project_category (project_id, category_id) VALUES
+(1, 1), (2, 1), (3, 1), (4, 1), (5, 1),   -- BrightFuture projects get Construction
+(6, 2), (7, 2), (8, 2), (9, 2), (10, 2),  -- GreenHarvest projects get Environment
+(11, 3), (12, 4), (13, 4), (14, 3), (15, 2); -- UnityServe gets mixed (Food, Edu, Env)
+
+-- Example of a project belonging to MULTIPLE categories (satisfying the rule)
+INSERT INTO project_category (project_id, category_id) VALUES
+(1, 2), -- Project 1 is both Construction AND Environment
+(11, 4); -- Project 11 is both Food AND Education
 

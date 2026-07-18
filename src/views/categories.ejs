@@ -3,13 +3,14 @@
         <h1>
             <%= title %>
         </h1>
-        <h2>Service Categories</h2>
+        
         <ul class="category-list">
             <% categories.forEach(category => { %>
                 <li class="project-card">
-                    <strong><%= category.category_name %></strong>  
-                    (<%= category.category_description %>)
+                    <strong> <%= category.category_name %></strong>  
                 </li>
+                
+                
             <% }) %>
                
         </ul>
