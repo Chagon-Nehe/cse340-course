@@ -1,19 +1,25 @@
 <%- include('partials/header') %>
     <main>
-        <h1><%= title %></h1>
-        <h2>Upcoming Service Projects</h2>
-        <ul class="project-list">
-            <% projects.forEach(project => { %>
-                <li class="project-card">
-                    <%= project.project_date.toDateString() %>: 
-                    <strong><%= project.project_title %></strong>  
-                    (<%= project.organization_name %>)
-                </li>
-            <% }) %>
-            <!--<li>Park Cleanup - Join us to clean up local parks and make them beautiful!</li>
-            <li>Food Drive - Help collect and distribute food to those in need.</li>
-            <li>Community Tutoring - Volunteer to tutor students in various subjects.</li>-->
-        </ul>
+        <h1>
+            <%= title %>
+        </h1>
 
+        <ul class="project-list">
+            <% projects.forEach(project=> { %>
+                <li class="project-card">
+                    <!-- Link to Project Details Page -->
+                    <a href="/project/<%= project.project_id %>">
+                        <strong>
+                            <%= project.title %>
+                        </strong>
+                    </a>
+
+                    <!-- Link to Organization Details Page -->
+                    (<a href="/organization/<%= project.organization_id %>">
+                        <%= project.organization_name %>
+                    </a>)
+                </li>
+                <% }) %>
+        </ul>
     </main>
-<%- include('partials/footer') %>
+    <%- include('partials/footer') %>
