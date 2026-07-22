@@ -48,8 +48,9 @@ app.use((req, res, next) => {
 // use the router for all routes
 app.use(router);
 
+
 //catch-all route for handling 404 errors
-app.use((req, res) => {
+app.use((req, res, next) => {
   const err = new Error('Page Not Found');
   err.status = 404;
 
